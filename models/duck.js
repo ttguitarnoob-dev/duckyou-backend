@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 
 const duckSchema = mongoose.Schema ({
-    name: String,
+    duckName: String,
     serial: {
         type: String,
         required: true

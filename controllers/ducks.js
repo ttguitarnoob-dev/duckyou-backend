@@ -27,7 +27,8 @@ router.get('/', async (req, res) => {
 //create
 router.post('/', async (req, res) => {
     try{
-        console.log('New Duck', req.body)
+        console.log('About to create a duck', req.body)
+
         const newDuck = await Duck.create(req.body)
         res.json(newDuck)
     }catch(err){
@@ -46,7 +47,7 @@ router.delete('/:id', async (req, res) => {
     }
 })
 
-//update
+//updated
 router.put('/:id', async (req, res) => {
     try{
         res.send("Update Route")
