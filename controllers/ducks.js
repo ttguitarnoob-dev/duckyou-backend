@@ -6,54 +6,57 @@ const router = express.Router()
 
 //show
 router.get('/:id', async (req, res) => {
-    try{
+    try {
         const oneDuck = await Duck.findById(req.params.id)
         res.json(oneDuck)
-    } catch(err){
+    } catch (err) {
         res.json('Error on Show Route oh no:', err)
     }
 })
 
 //index
 router.get('/', async (req, res) => {
-    try{
+    try {
         const allDucks = await Duck.find()
         res.json(allDucks)
-    }catch(err){
+    } catch (err) {
         res.json(err)
     }
 })
 
 //create
 router.post('/', async (req, res) => {
-    try{
+    try {
         console.log('About to create a duck', req.body)
 
         const newDuck = await Duck.create(req.body)
         res.json(newDuck)
-    }catch(err){
+    } catch (err) {
         res.json(err)
     }
 })
 
 //delete
 router.delete('/:id', async (req, res) => {
-    try{
+    try {
         const oneDuck = await Duck.findByIdAndDelete(req.params.id)
         console.log('Goodbye, ducking duck', oneDuck)
         res.json(oneDuck)
-    }catch(err){
+    } catch (err) {
         res.status(200).json()
     }
 })
 
 //updated
 router.put('/:id', async (req, res) => {
-    try{
-        res.send("Update Route")
-    }catch(err){
+    try {
+        const updatedDuck = await Duck.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        res.json(updatedDuck)
+    } catch (err) {
         res.json('Error on Update Route, crap', err)
     }
+    
+
 })
 
 module.exports = router
