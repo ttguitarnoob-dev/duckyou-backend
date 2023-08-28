@@ -11,7 +11,7 @@ const ducksController = require('./controllers/ducks')
 
 //CONFIG
 const PORT = 8000
-const acceptList = ["0.0.0.0", "http://localhost:3000", "http://10.24.24.167:3000"]
+const acceptList = ["0.0.0.0", "http://localhost:3000", "http://10.24.24.167:3000", "https://duckyou.ttguitarnoob.cloud"]
 const options = {
     origin: function(origin, callback){
         console.log('origin', origin)
