@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 
-const duckSchema = mongoose.Schema ({
+const duckSchema = mongoose.Schema({
     duckName: String,
     serial: {
         type: String,
@@ -11,14 +11,15 @@ const duckSchema = mongoose.Schema ({
         {
             destination: String,
             dateFound: String,
-            coords: Object
+            coords: Object,
+            images: [{
+                url: String,
+                caption: String
+            }]
         }
     ],
-    images: [{
-        url: String,
-        caption: String
-    }]
-}, {timestamps: true})
+
+}, { timestamps: true })
 
 const Duck = mongoose.model('duck', duckSchema)
 module.exports = Duck
