@@ -8,13 +8,11 @@ const duckSchema = mongoose.Schema ({
         required: true
     },
     locations: [
-        {destination: {
-            type: String,
-            required: true,
-            default: "Austin, TX"
-        },
-    coords: Object
-    }
+        {
+            destination: String,
+            dateFound: String,
+            coords: Object
+        }
     ],
     images: [{
         url: String,
