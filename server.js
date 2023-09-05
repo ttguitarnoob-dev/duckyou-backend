@@ -5,6 +5,7 @@ const res = require('express/lib/response')
 const app = express()
 require('./db')
 const methodOverride = require('method-override')
+const tempUrl = require('./s3.js')
 
 //CONTROLLERS
 const ducksController = require('./controllers/ducks')
@@ -38,6 +39,12 @@ app.get('/', (req, res) => {
         status: 200,
         body: "Home Route"
     })
+})
+
+//Temp url for s3 updload
+app.get('/tempurl', async (req, res) => {
+    const url = await tempUrl.generateURL()
+    res.send({url})
 })
 
 //START SERVER
