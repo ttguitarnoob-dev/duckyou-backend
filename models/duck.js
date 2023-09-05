@@ -12,10 +12,10 @@ const duckSchema = mongoose.Schema({
             destination: String,
             dateFound: String,
             coords: Object,
-            images: [{
+            image: {
                 url: String,
                 caption: String
-            }]
+            }
         }
     ],
 
