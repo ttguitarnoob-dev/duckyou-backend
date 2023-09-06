@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
     })
 })
 
-//Temp url for s3 updload
+//Generate url for s3 updload
 app.get('/tempurl', async (req, res) => {
     const url = await tempUrl.generateURL()
     res.send({url})
