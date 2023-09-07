@@ -9,6 +9,7 @@ const tempUrl = require('./s3.js')
 
 //CONTROLLERS
 const ducksController = require('./controllers/ducks')
+const storesController = require('./controllers/stores')
 
 //CONFIG
 const PORT = 8000
@@ -28,6 +29,7 @@ const options = {
 app.use(cors(options))
 app.use(express.json())
 app.use('/ducks', ducksController)
+app.use('/stores', storesController)
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 
@@ -35,9 +37,8 @@ app.use(methodOverride('_method'))
 
 //home route
 app.get('/', (req, res) => {
-    res.json({
-        status: 200,
-        body: "Home Route"
+    res.status(200).json({
+        message: "If you're not supposed to be here, begone."
     })
 })
 
