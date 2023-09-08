@@ -13,7 +13,7 @@ const storesController = require('./controllers/stores')
 
 //CONFIG
 const PORT = process.env.PORT || 8000
-const acceptList = ["0.0.0.0", "http://localhost:3000", "http://10.24.24.167:3000", "https://duckyou.ttguitarnoob.cloud"]
+const acceptList = ["0.0.0.0", "http://localhost:3000", "http://10.24.24.167:3000", "https://duckyou.ttguitarnoob.cloud", "https://getducked.org"]
 const options = {
     origin: function(origin, callback){
         console.log('origin', origin)
