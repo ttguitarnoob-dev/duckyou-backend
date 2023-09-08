@@ -12,7 +12,7 @@ const ducksController = require('./controllers/ducks')
 const storesController = require('./controllers/stores')
 
 //CONFIG
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 const acceptList = ["0.0.0.0", "http://localhost:3000", "http://10.24.24.167:3000", "https://duckyou.ttguitarnoob.cloud"]
 const options = {
     origin: function(origin, callback){

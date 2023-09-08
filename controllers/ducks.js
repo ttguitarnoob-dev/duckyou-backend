@@ -10,7 +10,9 @@ router.get('/:id', async (req, res) => {
         const oneDuck = await Duck.findById(req.params.id)
         res.json(oneDuck)
     } catch (err) {
-        res.json('Error on Show Route oh no:', err)
+        res.status(400).json({
+            body: err
+        })
     }
 })
 
@@ -20,7 +22,9 @@ router.get('/', async (req, res) => {
         const allDucks = await Duck.find()
         res.json(allDucks)
     } catch (err) {
-        res.json(err)
+        res.status(400).json({
+            body: err
+        })
     }
 })
 
@@ -32,7 +36,9 @@ router.post('/', async (req, res) => {
         const newDuck = await Duck.create(req.body)
         res.json(newDuck)
     } catch (err) {
-        res.json(err)
+        res.status(400).json({
+            body: err
+        })
     }
 })
 
@@ -43,7 +49,9 @@ router.delete('/:id', async (req, res) => {
         console.log('Goodbye, ducking duck', oneDuck)
         res.json(oneDuck)
     } catch (err) {
-        res.status(200).json()
+        res.status(400).json({
+            body: err
+        })
     }
 })
 
@@ -53,7 +61,9 @@ router.put('/:id', async (req, res) => {
         const updatedDuck = await Duck.findByIdAndUpdate(req.params.id, req.body, {new: true})
         res.json(updatedDuck)
     } catch (err) {
-        res.json('Error on Update Route, crap', err)
+        res.status(400).json({
+            body: err
+        })
     }
     
 
