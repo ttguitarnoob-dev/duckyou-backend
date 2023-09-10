@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 //show
 router.get('/:id', async (req, res) => {
     try {
-        const oneItem = await Store.findById(req.params.id)
+        const oneItem = await BuyDucks.findById(req.params.id)
         res.json(oneItem)
     } catch (err) {
         res.status(400).json({
@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
     try {
         console.log('About to create a new store item', req.body)
 
-        const newItem = await Store.create(req.body)
+        const newItem = await BuyDucks.create(req.body)
         res.json(newItem)
     } catch (err) {
         res.status(400).json({
@@ -50,10 +50,10 @@ router.post('/', async (req, res) => {
 //delete
 router.delete('/:id', async (req, res) => {
     try {
-        const oneItem = await Store.findByIdAndDelete(req.params.id)
-        console.log('Goodbye, ducking store item', oneItem)
+        const oneItem = await BuyDucks.findByIdAndDelete(req.params.id)
         res.status(200).json({
-            message: "Item deleted"
+            message: "Goodbye, ducking buyable duck",
+            deletedItem: oneItem
         })
     } catch (err) {
         res.status(400).json({
@@ -65,7 +65,7 @@ router.delete('/:id', async (req, res) => {
 //updated
 router.put('/:id', async (req, res) => {
     try {
-        const updatedItem = await Store.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        const updatedItem = await BuyDucks.findByIdAndUpdate(req.params.id, req.body, {new: true})
         res.status(200).json({
             message: "Item udated"
         })
