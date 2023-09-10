@@ -11,7 +11,7 @@ router.get('/:id', async (req, res) => {
         res.json(oneDuck)
     } catch (err) {
         res.status(400).json({
-            body: err
+            message: "Something went horrendoulsy awry when fetching duck data"
         })
     }
 })
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
         res.json(allDucks)
     } catch (err) {
         res.status(400).json({
-            body: err
+            message: "Something went horrendoulsy awry when fetching duck data"
         })
     }
 })
@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
         res.json(newDuck)
     } catch (err) {
         res.status(400).json({
-            body: err
+            message: "Something went horrendoulsy awry when fetching duck data"
         })
     }
 })
@@ -50,7 +50,7 @@ router.delete('/:id', async (req, res) => {
         res.json(oneDuck)
     } catch (err) {
         res.status(400).json({
-            body: err
+            message: "Something went horrendoulsy awry when fetching duck data"
         })
     }
 })
@@ -62,7 +62,7 @@ router.put('/:id', async (req, res) => {
         res.json(updatedDuck)
     } catch (err) {
         res.status(400).json({
-            body: err
+            message: "Something went horrendoulsy awry when fetching duck data"
         })
     }
     

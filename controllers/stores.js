@@ -12,7 +12,10 @@ router.get('/', async (req, res) => {
         const allItems = await Store.find()
         res.json(allItems)
     } catch (err) {
-        res.json(err)
+        res.status(400).json({
+            message: "big bad problem with fetching store item",
+            error: err
+        })
     }
 })
 
@@ -22,7 +25,10 @@ router.get('/:id', async (req, res) => {
         const oneItem = await Store.findById(req.params.id)
         res.json(oneItem)
     } catch (err) {
-        res.json('Error on Show Route oh no:', err)
+        res.status(400).json({
+            message: "big bad problem with fetching store item",
+            error: err
+        })
     }
 })
 
@@ -35,7 +41,8 @@ router.post('/', async (req, res) => {
         res.json(newItem)
     } catch (err) {
         res.status(400).json({
-            message: "big bad problem with creating a store item"
+            message: "big bad problem with fetching store item",
+            error: err
         })
     }
 })
@@ -63,7 +70,10 @@ router.put('/:id', async (req, res) => {
             message: "Item udated"
         })
     } catch (err) {
-        res.json('Error on Update Route, crap', err)
+        res.status(400).json({
+            message: "big bad problem with fetching store item",
+            error: err
+        })
     }
     
 

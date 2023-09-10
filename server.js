@@ -30,6 +30,7 @@ app.use(cors(options))
 app.use(express.json())
 app.use('/ducks', ducksController)
 app.use('/stores', storesController)
+app.use('/buyducks', storesController)
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 
