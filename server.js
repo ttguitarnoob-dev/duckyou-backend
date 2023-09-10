@@ -10,6 +10,7 @@ const tempUrl = require('./s3.js')
 //CONTROLLERS
 const ducksController = require('./controllers/ducks')
 const storesController = require('./controllers/stores')
+const buyDucksController = require('./controllers/buyducks')
 
 //CONFIG
 const PORT = process.env.PORT || 8000
@@ -30,7 +31,7 @@ app.use(cors(options))
 app.use(express.json())
 app.use('/ducks', ducksController)
 app.use('/stores', storesController)
-app.use('/buyducks', storesController)
+app.use('/buyducks', buyDucksController)
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 
