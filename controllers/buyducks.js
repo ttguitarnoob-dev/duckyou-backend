@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const BuyDucks = require('../models/store')
+const BuyDucks = require('../models/buyduck')
 
 
 
