@@ -9,5 +9,5 @@ const storeSchema = mongoose.Schema({
 
 }, {timestamps: true })
 
-const Store = mongoose.model('store', storeSchema)
-module.exports = Store
+const BuyDucks = mongoose.model('buyDucks', storeSchema)
+module.exports = BuyDucks
