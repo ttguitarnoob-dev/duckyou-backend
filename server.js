@@ -14,7 +14,7 @@ const buyDucksController = require('./controllers/buyducks')
 
 //CONFIG
 const PORT = process.env.PORT || 8000
-const acceptList = ["0.0.0.0", "http://localhost:3000", "https://getducked.org", "https://duckyou.ttguitarnoob.cloud", "https://www.getducked.org"]
+const acceptList = ["0.0.0.0", "http://localhost:3000", "https://getducked.org", "https://duckyou.ttguitarnoob.cloud", "https://www.getducked.org, http://getducked.org"]
 const options = {
     origin: function(origin, callback){
         console.log('origin', origin)
